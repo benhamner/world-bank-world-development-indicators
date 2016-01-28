@@ -59,7 +59,7 @@ release: output/hashes.txt
 	zip -r -X output/world-development-indicators-release-`date -u +'%Y-%m-%d-%H-%M-%S'` world-development-indicators/*
 	rm -rf world-development-indicators
 
-all: csv db hashes release output-raw
+all: csv db hashes release
 
 clean:
 	rm -rf working

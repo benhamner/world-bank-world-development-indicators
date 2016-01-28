@@ -29,7 +29,7 @@ for table in tables:
         data = pd.melt(data, id_vars=["CountryName","CountryCode","IndicatorName", "IndicatorCode"], var_name="Year", value_name="Value")
         data = data[[not np.isnan(v) for v in data["Value"]]]
     if table=="Country":
-        data = data.rename({"2AlphaCode": "Alpha2Code"})
+        data = data.rename(columns={"2AlphaCode": "Alpha2Code"})
 
     data.to_csv("output/%s.csv" % table, index=False)
     data = pd.read_csv("output/%s.csv" % table)
